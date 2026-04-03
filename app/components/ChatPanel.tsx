@@ -294,7 +294,16 @@ export default function ChatPanel() {
                   handleSend();
                 }
               }}
-              onFocus={() => {}}
+              onFocus={() => {
+                if (!isExpanded && messages.length > 0) {
+                  setIsExpanded(true);
+                }
+              }}
+              onClick={() => {
+                if (!isExpanded && messages.length > 0) {
+                  setIsExpanded(true);
+                }
+              }}
               placeholder="저에 대해 무엇이든 물어보세요..."
               className="flex-1 bg-transparent text-[14px] outline-none placeholder:text-muted font-sans"
             />
