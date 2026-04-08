@@ -6,6 +6,11 @@ export const API_CONFIG = {
   },
 } as const;
 
+// 디버깅용 로그
+if (typeof window !== 'undefined') {
+  console.log('API BASE_URL:', API_CONFIG.BASE_URL);
+}
+
 // API 요청 헬퍼 함수
 export const getApiUrl = (endpoint: string) => {
   return `${API_CONFIG.BASE_URL}${endpoint}`;
